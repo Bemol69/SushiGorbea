@@ -1,0 +1,11 @@
+{
+  "titulo": "Bienvenida",
+  "codigo": "GORBEA5",
+  "tipo": "porcentaje",
+  "valor": 5,
+  "categorias": [],
+  "productos": [],
+  "minimo": 10000,
+  "vence": "",
+  "activo": true
+}

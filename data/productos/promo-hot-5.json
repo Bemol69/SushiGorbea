@@ -1,0 +1,17 @@
+{
+  "nombre": "Promo Hot 5",
+  "piezas": "28 piezas",
+  "precio": 12990,
+  "foto": "img/productos/carta-hot-5.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Pollo teriyaki, queso crema (caliente)",
+    "Camarón apanado, queso crema (palta)",
+    "Cheesecake (postre)"
+  ],
+  "etiqueta": "Con postre",
+  "orden": 50,
+  "agotado": false,
+  "visible": true
+}

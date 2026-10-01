@@ -1,0 +1,18 @@
+{
+  "nombre": "40 Piezas Mix",
+  "piezas": "40 piezas",
+  "precio": 10500,
+  "foto": "img/productos/mix-40.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Pollo teriyaki, queso crema (caliente)",
+    "Kanikama, queso crema (caliente)",
+    "Palta, palmito (ciboulette)",
+    "Palta, queso crema (hosomaki)"
+  ],
+  "etiqueta": "",
+  "orden": 80,
+  "agotado": false,
+  "visible": true
+}

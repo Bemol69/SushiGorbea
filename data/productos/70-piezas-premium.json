@@ -1,0 +1,21 @@
+{
+  "nombre": "70 Piezas Premium",
+  "piezas": "70 piezas",
+  "precio": 28990,
+  "foto": "img/productos/premium-70.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Camarón, cebolla caramelizada, queso crema (caliente)",
+    "Pollo teriyaki, cebollín, queso crema (caliente)",
+    "Champiñón, pimentón, queso crema (caliente)",
+    "Camarón apanado, cebollín, queso crema (palta)",
+    "Pollo apanado, palta, ciboulette (queso crema)",
+    "Salmón apanado, cebollín, queso crema (palta)",
+    "Kanikama, ciboulette, palta (sésamo)"
+  ],
+  "etiqueta": "Premium",
+  "orden": 90,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,379 @@
+# Configuración del panel /admin (Sveltia CMS) · Gorbea Sushi
+# Cada cambio que se guarda aquí crea un commit en GitHub.
+# Vercel arma la web (scripts/build.mjs) y la publica en ~30 segundos.
+
+backend:
+  name: github
+  repo: %%GITHUB_REPO%%
+  branch: main
+  commit_messages:
+    create: "Carta: crea {{collection}} «{{slug}}»"
+    update: "Carta: actualiza {{collection}} «{{slug}}»"
+    delete: "Carta: elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Carta: sube foto {{path}}"
+    deleteMedia: "Carta: elimina foto {{path}}"
+
+site_url: %%SITE_URL%%
+display_url: %%SITE_URL%%
+logo_url: ../img/logo.jpg
+
+media_folder: img/productos
+public_folder: /img/productos
+
+# Nombres de archivo sin tildes ni ñ (ej: "Promo Hot 2" -> promo-hot-2.json)
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Las fotos del celular se achican y convierten a WebP al subirlas, para que la web cargue rápido
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1400
+          height: 1400
+
+collections:
+  # ---------- PRODUCTOS (comandas de la carta) ----------
+  - name: productos
+    label: Carta (productos)
+    label_singular: producto
+    description: "Cada producto es una comanda en la web. Para que aparezca en un filtro (Promos Hot, Para picar…), agrégalo desde Categorías."
+    icon: ramen_dining
+    folder: data/productos
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}} · {{piezas}} · ${{precio}}"
+    thumbnail: foto
+    sortable_fields:
+      fields: [orden, nombre, precio]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - name: nombre
+        label: Nombre
+        widget: string
+        hint: "Corto y como en la carta. Ej: Promo Hot 2, Gyozas, 40 Piezas Mix"
+
+      - name: piezas
+        label: Piezas o unidades
+        widget: string
+        required: false
+        hint: "Aparece junto al nombre. Ej: 24 piezas, 5 unidades. Déjalo vacío si no aplica."
+
+      - name: precio
+        label: Precio
+        widget: number
+        value_type: int
+        min: 0
+        hint: "Solo números, sin puntos ni signo $. Ej: 13990. Si el producto tiene opciones con distinto precio, pon aquí el más bajo."
+
+      - name: foto
+        label: Foto principal
+        widget: image
+        hint: "La que se ve en la comanda. Ideal horizontal (4:3), con el sushi bien de cerca. También sirve el flyer del post."
+
+      - name: fotos
+        label: Segunda foto
+        label_singular: foto
+        widget: list
+        required: false
+        max: 1
+        field:
+          name: foto
+          label: Foto
+          widget: image
+        hint: "Opcional, una sola. Aparece al pasar el mouse por la comanda y en la ficha."
+
+      - name: incluye
+        label: Rolls que trae
+        label_singular: roll
+        widget: list
+        required: false
+        field:
+          name: item
+          label: Roll
+          widget: string
+        hint: "Un roll por línea, como en la carta. Ej: Pollo teriyaki, queso crema (caliente)"
+
+      - name: descripcion
+        label: Descripción
+        widget: text
+        required: false
+        hint: "Opcional, una frase. Ej: Bolitas fritas rellenas de queso crema."
+
+      - name: variantes
+        label: Opciones que el cliente debe elegir
+        widget: object
+        required: false
+        collapsed: true
+        hint: "Opcional. Ej: Gyozas → Relleno: Pollo, Cerdo, Camarón, Verduras. Si lo dejas vacío, el producto se agrega directo."
+        fields:
+          - { name: titulo, label: "Pregunta", widget: string, required: false, hint: "Ej: Relleno, Kanikama queso crema, Tipo" }
+          - name: opciones
+            label: Opciones
+            label_singular: opción
+            widget: list
+            required: false
+            summary: "{{nombre}} · ${{precio}}"
+            fields:
+              - { name: nombre, label: Opción, widget: string, hint: "Ej: Camarón, Caliente, Frío" }
+              - { name: precio, label: "Precio de esta opción", widget: number, value_type: int, min: 0, required: false, hint: "Opcional. Vacío = el precio del producto." }
+
+      - name: etiqueta
+        label: Sello
+        widget: string
+        required: false
+        hint: "Opcional. Aparece como timbre sobre la foto. Ej: Acevichado wow, Nuevo, 100% vegano."
+
+      - name: orden
+        label: Posición
+        widget: number
+        value_type: int
+        default: 1000
+        hint: "Los números más bajos aparecen primero. La primera comanda de la carta sale destacada en grande."
+
+      - name: agotado
+        label: Agotado hoy
+        widget: boolean
+        default: false
+        hint: "Si está activado, la comanda muestra 'Consultar' en vez de 'Agregar'."
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: "Desactívalo para ocultar el producto sin borrarlo."
+
+  # ---------- CATEGORÍAS (filtros de la carta) ----------
+  - name: categorias
+    label: Categorías
+    label_singular: categoría
+    description: "Los filtros de la carta (Promos Hot, Mix y Premium…). Abre uno para elegir qué productos aparecen en él."
+    icon: filter_list
+    folder: data/categorias
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}}"
+    sortable_fields:
+      fields: [orden, nombre]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - { name: nombre, label: Nombre del filtro, widget: string, hint: "Así aparece en la web. Ej: Para picar" }
+      - name: productos
+        label: Productos en este filtro
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}} · ${{precio}}"]
+        multiple: true
+        required: false
+        hint: "Busca y marca los productos. Para moverlo de filtro, quítalo de aquí y agrégalo en el otro."
+      - { name: orden, label: Posición, widget: number, value_type: int, default: 100, hint: "Los números más bajos aparecen primero." }
+      - { name: visible, label: Mostrar en la web, widget: boolean, default: true }
+
+  # ---------- CÓDIGOS DE DESCUENTO ----------
+  - name: cupones
+    label: Códigos de descuento
+    label_singular: código de descuento
+    description: "Códigos que tus clientes escriben en la comanda. La web les dice si es válido y el descuento llega calculado en el WhatsApp."
+    icon: sell
+    folder: data/cupones
+    format: json
+    create: true
+    delete: true
+    identifier_field: titulo
+    slug: "{{titulo}}"
+    summary: "{{codigo}} · {{titulo}} · {{activo}}"
+    fields:
+      - { name: titulo, label: Título, widget: string, hint: "Para que tú lo reconozcas. Ej: Descuento estudiantes, Día del sushi." }
+      - name: codigo
+        label: Código
+        widget: string
+        pattern: ['^[A-Za-z0-9-]{3,20}$', "Entre 3 y 20 letras, números o guiones, sin espacios ni tildes. Ej: GORBEA10"]
+        hint: "Lo que el cliente escribe (da lo mismo mayúsculas o minúsculas). Ej: GORBEA10, SUSHILOVER."
+      - name: tipo
+        label: Tipo de descuento
+        widget: select
+        options:
+          - { label: "Porcentaje (%)", value: porcentaje }
+          - { label: "Monto fijo en pesos ($)", value: monto }
+        default: porcentaje
+      - { name: valor, label: Descuento, widget: number, value_type: int, min: 1, hint: "Solo el número. 10 = 10% o $10 según el tipo; para monto fijo, ej 2000 = $2.000 menos." }
+      - name: categorias
+        label: Aplica a estas categorías
+        widget: relation
+        collection: categorias
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: [nombre]
+        multiple: true
+        required: false
+        hint: "Opcional. Si dejas vacías categorías Y productos, sirve para toda la carta."
+      - name: productos
+        label: Aplica a estos productos
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}} · ${{precio}}"]
+        multiple: true
+        required: false
+      - { name: minimo, label: Pedido mínimo, widget: number, value_type: int, min: 0, required: false, hint: "Opcional. Ej: 10000. Vacío = sin mínimo." }
+      - { name: vence, label: Válido hasta, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false, hint: "Opcional. Deja de funcionar al terminar ese día." }
+      - { name: activo, label: Activo, widget: boolean, default: true, hint: "Apágalo para pausar el código sin borrarlo." }
+
+  # ---------- AJUSTES DEL LOCAL ----------
+  - name: ajustes
+    label: Ajustes del local
+    icon: settings
+    files:
+      - name: ajustes
+        label: Contacto, horario, pagos y portada
+        file: data/ajustes.json
+        format: json
+        fields:
+          - name: whatsapp
+            label: WhatsApp para pedidos
+            widget: string
+            pattern: ['^569[0-9]{8}$', "11 dígitos empezando con 569, sin + ni espacios. Ej: 56973177547"]
+            hint: "Aquí llegan las comandas. Ej: 56973177547"
+          - { name: instagram, label: Usuario de Instagram, widget: string, required: false, hint: "Sin @. Ej: gorbea.sushi" }
+          - { name: facebook, label: Link de Facebook, widget: string, required: false, hint: "Opcional. El link completo de la página." }
+          - { name: direccion, label: Dirección del local, widget: string, hint: "Ej: Gorbea 2081" }
+          - { name: barrio, label: Barrio, widget: string, required: false, hint: "Ej: Barrio República" }
+          - { name: ciudad, label: Ciudad, widget: string }
+          - { name: region, label: Región, widget: string, required: false }
+          - { name: seguidores, label: Seguidores en Instagram, widget: string, required: false, hint: "Aparece en la portada. Ej: 1.976. Vacío = no se muestra." }
+          - { name: horario_dias, label: Días de atención, widget: string, default: "Lunes a domingo" }
+          - { name: hora_abre, label: Hora de apertura, widget: string, pattern: ['^\d{2}:\d{2}$', "Formato HH:MM, ej 12:00"] }
+          - { name: hora_cierra, label: "Hora de cierre (domingo a jueves)", widget: string, pattern: ['^\d{2}:\d{2}$', "Formato HH:MM, ej 23:00"] }
+          - { name: hora_cierra_finde, label: "Hora de cierre (viernes y sábado)", widget: string, pattern: ['^\d{2}:\d{2}$', "Formato HH:MM, ej 23:30"] }
+          - name: metodos_pago
+            label: Medios de pago
+            widget: object
+            fields:
+              - { name: efectivo, label: Efectivo, widget: boolean, default: true }
+              - { name: transferencia, label: Transferencia, widget: boolean, default: true }
+              - { name: tarjeta_retiro, label: "Tarjeta (solo al retirar en el local)", widget: boolean, default: true }
+          - { name: propina, label: Ofrecer propina al pedir, widget: boolean, default: true, hint: "Muestra las opciones Sin / 5% / 10%." }
+          - name: salsas
+            label: Salsas extra
+            label_singular: salsa
+            widget: list
+            required: false
+            field: { name: salsa, label: Salsa, widget: string }
+            hint: "Las que el cliente puede marcar en la comanda. Se cobran y confirman por WhatsApp."
+          - { name: hero_titulo, label: Título de la portada, widget: string, hint: "Ej: Sushi de barrio," }
+          - { name: hero_destacado, label: Parte destacada del título, widget: string, required: false, hint: "Aparece en celeste. Ej: fusión de verdad." }
+          - { name: hero_bajada, label: Texto bajo el título, widget: text }
+
+      - name: zonas
+        label: Zonas de delivery
+        file: data/zonas.json
+        format: json
+        fields:
+          - name: zonas
+            label: Comunas con delivery
+            label_singular: comuna
+            widget: list
+            summary: "{{comuna}} · ${{costo}}"
+            fields:
+              - { name: comuna, label: Comuna, widget: string }
+              - { name: costo, label: Costo del delivery, widget: number, value_type: int, min: 0, required: false, hint: "Solo números. 0 o vacío = se confirma por WhatsApp." }
+          - { name: otra_comuna, label: "Mostrar la opción «Otra comuna (consultar)»", widget: boolean, default: true }
+
+  # ---------- PROMO, FRANJA Y FOTOS DEL LOCAL ----------
+  - name: inicio
+    label: Promo, franja y local
+    description: "La promo de la semana, la franja de texto en movimiento y las 3 fotos de «Desde la barra»."
+    icon: campaign
+    files:
+      - name: flyer
+        label: Promo de la semana
+        file: data/flyer.json
+        format: json
+        fields:
+          - { name: mostrar, label: Mostrar la promo en la web, widget: boolean, default: true, hint: "Apágalo cuando no haya promo vigente." }
+          - { name: popup, label: Mostrar también como ventana emergente, widget: boolean, default: true, hint: "Aparece una vez por visita." }
+          - name: imagen
+            label: Flyer
+            widget: image
+            media_folder: /img/flyer
+            public_folder: /img/flyer
+            hint: "El mismo flyer que subes a Instagram (1080×1080 o 1080×1350)."
+          - { name: titulo, label: Título, widget: string, hint: "Ej: Promo Hot 4" }
+          - { name: descripcion, label: Texto de la promo, widget: text, hint: "Qué trae y cuánto cuesta (ayuda a Google y a personas con lector de pantalla)." }
+          - name: producto
+            label: Producto de la carta
+            widget: relation
+            collection: productos
+            value_field: "{{slug}}"
+            search_fields: [nombre]
+            display_fields: ["{{nombre}} · ${{precio}}"]
+            required: false
+            hint: "Opcional. Si eliges uno, aparece el botón «Agregar a mi comanda» con su precio."
+          - { name: mensaje_whatsapp, label: Mensaje de WhatsApp, widget: string, hint: "Lo que se escribe solo al tocar «La quiero»." }
+
+      - name: franjas
+        label: Franja de texto
+        file: data/franjas.json
+        format: json
+        fields:
+          - name: franja1
+            label: Franja bajo la portada
+            widget: object
+            fields:
+              - name: frases
+                label: Frases
+                label_singular: frase
+                widget: list
+                min: 1
+                field: { name: frase, label: Frase, widget: string }
+                hint: "Frases cortas (2 a 5 palabras). Ej: Rolls calientes, Delivery y retiro."
+              - name: velocidad
+                label: Velocidad
+                widget: select
+                options: [{ label: Lenta, value: lenta }, { label: Normal, value: normal }, { label: Rápida, value: rapida }]
+                default: normal
+
+      - name: local
+        label: Fotos del local (3)
+        file: data/local.json
+        format: json
+        fields:
+          - name: fotos
+            label: Fotos o videos
+            label_singular: foto
+            widget: list
+            min: 3
+            max: 3
+            allow_add: false
+            allow_remove: false
+            summary: "{{titulo}}"
+            hint: "Siempre son 3. La primera sale más grande."
+            fields:
+              - name: archivo
+                label: Foto o video
+                widget: file
+                accept: "image/*,video/mp4,video/webm"
+                media_folder: /img/local
+                public_folder: /img/local
+                hint: "Foto o video MP4 vertical de menos de 15 segundos. Los videos se reproducen solos y sin sonido."
+              - { name: titulo, label: Título, widget: string, hint: "Ej: La barra" }
+              - { name: texto, label: Bajada, widget: string, required: false, hint: "Ej: Gorbea 2081, Barrio República" }
+              - { name: descripcion, label: Descripción de la imagen, widget: string, required: false, hint: "Qué se ve (para Google y lectores de pantalla)." }

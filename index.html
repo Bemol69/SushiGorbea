@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>%%SEO_TITULO%%</title>
+  <meta name="description" content="%%SEO_DESCRIPCION%%">
+  <meta name="theme-color" content="%%COLOR_NOCHE%%">
+  <!-- SEO:HEAD (canonical, Open Graph y datos estructurados: los escribe scripts/build.mjs) -->
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="apple-touch-icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="%%FUENTES_URL%%">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="%%HERO_1%%">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 2.5h14v19l-2.3-1.6-2.4 1.6-2.3-1.6-2.3 1.6-2.4-1.6L5 21.5z"/><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 7.5h7M8.5 11h7M8.5 14.5h4"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-chop" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 21 20 3M8 21 21 7"/></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 17h6l2-6h-4l-2 3H7M14 6h3l1 5"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 9.5V20h16V9.5M3 9.5 5 4h14l2 5.5c0 1.4-1.2 2.5-2.6 2.5S16 10.9 16 9.5c0 1.4-1.2 2.5-2.6 2.5h-2.8C9.2 12 8 10.9 8 9.5 8 10.9 6.9 12 5.5 12S3 10.9 3 9.5zM10 20v-5h4v5"/></symbol>
+  </svg>
+
+  <a class="skip" href="#carta">Saltar a la carta</a>
+
+  <!-- ================= ENCABEZADO ================= -->
+  <header class="top" id="top">
+    <div class="top__in">
+      <a class="brand" href="#top" aria-label="%%NOMBRE%%, inicio">
+        <img src="img/logo.jpg" alt="" width="40" height="40">
+        <span class="brand__name">gorbea<em>sushi</em></span>
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#carta">Carta</a>
+        <a href="#como">Cómo pedir</a>
+        <a href="#local">El local</a>
+        <a href="#horario">Horario</a>
+      </nav>
+      <span class="status" id="status" data-status>
+        <i class="status__dot" aria-hidden="true"></i><span class="status__txt">%%HORARIO_DIAS%% · %%HORA_ABRE%%</span>
+      </span>
+      <button class="bag-btn" type="button" data-open-bag aria-label="Abrir mi comanda">
+        <svg class="ic"><use href="#i-ticket"/></svg>
+        <span class="bag-btn__label">Comanda</span>
+        <span class="bag-btn__n" id="bagCount" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= PORTADA ================= -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="rain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="hero__giant" aria-hidden="true"><span>GORBEA</span></p>
+      <div class="hero__in">
+        <div class="hero__copy">
+          <p class="kicker"><svg class="ic"><use href="#i-pin"/></svg> %%DIRECCION%% · %%BARRIO%%, %%CIUDAD%%</p>
+          <h1 id="heroTitle" class="hero__title">
+            <span class="w">%%HERO_TITULO%%</span>
+            <!-- SI:HERO_DESTACADO --><em class="w">%%HERO_DESTACADO%%</em><!-- /SI:HERO_DESTACADO -->
+          </h1>
+          <p class="hero__lead">%%HERO_BAJADA%%</p>
+          <div class="hero__cta">
+            <a class="btn btn--sea btn--lg" href="#carta">Ver la carta <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--wa btn--lg" href="%%WA_HOLA%%" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Pedir por WhatsApp</a>
+          </div>
+          <dl class="facts">
+            <div><dt>Promos en la carta</dt><dd><span data-count="%%N_PRODUCTOS%%">%%N_PRODUCTOS%%</span></dd></div>
+            <!-- SI:PRECIO_MIN --><div><dt>Para picar desde</dt><dd>%%PRECIO_MIN%%</dd></div><!-- /SI:PRECIO_MIN -->
+            <!-- SI:SEGUIDORES --><div><dt>Sushi lovers en IG</dt><dd>%%SEGUIDORES%%</dd></div><!-- /SI:SEGUIDORES -->
+            <div><dt>%%HORARIO_DIAS%%</dt><dd>%%HORA_ABRE%%<small>–%%HORA_CIERRA_FINDE%%</small></dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__art">
+          <figure class="plate plate--main" data-parallax="0.06">
+            <img src="%%HERO_1%%" alt="%%HERO_1_ALT%%" width="540" height="470" fetchpriority="high">
+          </figure>
+          <figure class="plate plate--side" data-parallax="-0.08">
+            <img src="%%HERO_2%%" alt="%%HERO_2_ALT%%" width="640" height="400" loading="lazy">
+          </figure>
+          <span class="chopsticks" aria-hidden="true"></span>
+          <!-- SI:HERO_PROD_ID -->
+          <article class="mini-ticket" aria-label="Destacado de la carta">
+            <span class="ticket__clip" aria-hidden="true"></span>
+            <p class="mini-ticket__no">Comanda Nº %%HERO_PROD_NO%%</p>
+            <p class="mini-ticket__name">%%HERO_PROD_NOMBRE%%</p>
+            <p class="mini-ticket__meta">%%HERO_PROD_PIEZAS%%<!-- SI:HERO_PROD_ETIQUETA --> · %%HERO_PROD_ETIQUETA%%<!-- /SI:HERO_PROD_ETIQUETA --></p>
+            <p class="mini-ticket__row"><strong>%%HERO_PROD_PRECIO%%</strong><button class="btn btn--sea btn--sm" type="button" data-add="%%HERO_PROD_ID%%">Agregar</button></p>
+          </article>
+          <!-- /SI:HERO_PROD_ID -->
+        </div>
+      </div>
+    </section>
+
+    <div class="franja" aria-hidden="true">
+      <div class="franja__track" style="--seg:%%FRANJA_SEG%%s"><!-- FRANJA --></div>
+    </div>
+
+    <!-- ================= CARTA ================= -->
+    <section class="carta" id="carta" aria-labelledby="cartaTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker kicker--dark">La carta · %%N_PRODUCTOS%% comandas</p>
+          <h2 id="cartaTitle" class="sec-title">Colgadas en el riel, <em>listas pa' la cocina</em></h2>
+          <p class="sec-lead">Toca una comanda para ver qué trae cada roll. Todo se arma al momento en %%DIRECCION%%.</p>
+        </header>
+
+        <div class="toolbar">
+          <div class="tabs" id="filters" role="tablist" aria-label="Filtrar la carta"><!-- SEO:FILTROS --></div>
+          <label class="sort">
+            <span>Ordenar</span>
+            <select id="sort">
+              <option value="destacados">Destacados</option>
+              <option value="precio-asc">Menor precio</option>
+              <option value="precio-desc">Mayor precio</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="rail" id="productGrid" aria-live="polite"><!-- SEO:PRODUCTOS --></div>
+
+        <aside class="extra">
+          <svg class="ic" aria-hidden="true"><use href="#i-chop"/></svg>
+          <p><strong>¿Sashimi, crab balls o ebi tempura?</strong> La carta completa la tenemos en el local. Escríbelo en tu comanda como pedido libre y te lo confirmamos.</p>
+          <button class="btn btn--line" type="button" data-encargo>Escribir pedido libre</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= PROMO DE LA SEMANA ================= -->
+    <!-- SI:FLYER -->
+    <section class="promo" id="promo" aria-labelledby="promoTitle">
+      <div class="wrap promo__in">
+        <figure class="poster" data-reveal>
+          <span class="tape tape--l" aria-hidden="true"></span><span class="tape tape--r" aria-hidden="true"></span>
+          <img src="%%FLYER%%" alt="%%FLYER_ALT%%" loading="lazy" decoding="async">
+        </figure>
+        <div class="promo__copy" data-reveal>
+          <p class="kicker">🔥 Promo de la semana</p>
+          <h2 id="promoTitle" class="sec-title sec-title--light">%%FLYER_TITULO%%</h2>
+          <p class="promo__txt">%%FLYER_TEXTO%%</p>
+          <!-- SI:FLYER_PRECIO --><p class="promo__price">%%FLYER_PRECIO%%</p><!-- /SI:FLYER_PRECIO -->
+          <div class="hero__cta">
+            <!-- SI:FLYER_PRODUCTO --><button class="btn btn--sea btn--lg" type="button" data-add="%%FLYER_PRODUCTO%%">Agregar a mi comanda</button><!-- /SI:FLYER_PRODUCTO -->
+            <a class="btn btn--wa btn--lg" href="%%FLYER_WA%%" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> La quiero</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /SI:FLYER -->
+
+    <!-- ================= CÓMO PEDIR ================= -->
+    <section class="como" id="como" aria-labelledby="comoTitle">
+      <div class="wrap como__in">
+        <header class="sec-head">
+          <p class="kicker kicker--dark">Cómo pedir</p>
+          <h2 id="comoTitle" class="sec-title">Tres pasos y <em>a la cocina</em></h2>
+          <p class="sec-lead">Sin apps ni registros: tu pedido llega armado a nuestro WhatsApp con su número de comanda.</p>
+        </header>
+        <ol class="steps">
+          <li data-reveal>
+            <span class="steps__n">01</span>
+            <h3>Arma tu comanda</h3>
+            <p>Elige tus promos y cuántas. Si una trae opciones (caliente o frío, relleno de las gyozas) te preguntamos ahí mismo.</p>
+          </li>
+          <li data-reveal>
+            <span class="steps__n">02</span>
+            <h3>Delivery o retiro</h3>
+            <p>Te lo llevamos a comunas cercanas al Barrio República, o lo retiras en %%DIRECCION%% a la hora que elijas.</p>
+          </li>
+          <li data-reveal>
+            <span class="steps__n">03</span>
+            <h3>Se va por WhatsApp</h3>
+            <p>Revisas el mensaje, lo envías y te confirmamos altiro el total y el tiempo de entrega. 🔥</p>
+          </li>
+        </ol>
+        <div class="receipt-demo" data-reveal aria-hidden="true">
+          <p class="receipt-demo__head">🍣 COMANDA GORBEA · GS-7K2Q</p>
+          <p>1. Promo Hot 2 · 24 piezas ×1</p>
+          <p>2. Gyozas · Cerdo ×2</p>
+          <p>🛵 Delivery · Santiago Centro</p>
+          <p>💵 Efectivo</p>
+          <p class="receipt-demo__total">TOTAL ········ $20.770</p>
+          <span class="receipt-demo__sent"><svg class="ic"><use href="#i-check"/></svg> Enviado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EL LOCAL ================= -->
+    <section class="local" id="local" aria-labelledby="localTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker">Desde la barra</p>
+          <h2 id="localTitle" class="sec-title sec-title--light">Ven a Gorbea, <em>o te lo llevamos</em></h2>
+        </header>
+        <div class="shots">
+          <!-- LOCAL:FOTOS (3 fotos o videos: los escribe scripts/build.mjs desde data/local.json) -->
+          <blockquote class="quote" data-reveal>
+            <p>“Viva el sushi y en el mejor local.”</p>
+            <footer>— Clienta de Gorbea, en Instagram</footer>
+          </blockquote>
+          <div class="rainy" data-reveal>
+            <p class="rainy__kicker">🌧️ ¿Llueve en Santiago?</p>
+            <p class="rainy__txt">Pelis y sushi: el plan perfecto. Arma tu comanda y quédate en la casa.</p>
+            <a class="btn btn--sea btn--sm" href="#carta">Pedir para la casa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HORARIO Y UBICACIÓN ================= -->
+    <section class="horario" id="horario" aria-labelledby="horarioTitle">
+      <div class="wrap horario__in">
+        <div class="horario__info">
+          <p class="kicker kicker--dark">Horario y ubicación</p>
+          <h2 id="horarioTitle" class="sec-title">%%DIRECCION%%, <em>%%BARRIO%%</em></h2>
+          <div class="neon" data-status-neon aria-live="polite">
+            <span class="neon__sign">Abierto</span>
+            <span class="neon__sub">%%HORARIO_DIAS%%</span>
+          </div>
+          <table class="hours">
+            <caption class="sr-only">Horario de atención</caption>
+            <tbody>
+              <!-- SI:HORARIO_DISTINTO -->
+              <tr data-days="0 1 2 3 4"><th scope="row">Domingo a jueves</th><td>%%HORA_ABRE%% – %%HORA_CIERRA%%</td></tr>
+              <tr data-days="5 6"><th scope="row">Viernes y sábado</th><td>%%HORA_ABRE%% – %%HORA_CIERRA_FINDE%%</td></tr>
+              <!-- /SI:HORARIO_DISTINTO -->
+              <tr data-days="all" class="hours__all"><th scope="row">%%HORARIO_DIAS%%</th><td>%%HORA_ABRE%% – %%HORA_CIERRA%%</td></tr>
+            </tbody>
+          </table>
+          <div class="hero__cta">
+            <a class="btn btn--sea" href="https://www.google.com/maps/search/?api=1&query=%%MAPA_QUERY%%" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg> Cómo llegar</a>
+            <!-- SI:INSTAGRAM --><a class="btn btn--line" href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg> @%%INSTAGRAM%%</a><!-- /SI:INSTAGRAM -->
+          </div>
+        </div>
+        <div class="map" data-map="https://maps.google.com/maps?q=%%MAPA_QUERY%%&z=16&output=embed">
+          <a class="map__ph" href="https://www.google.com/maps/search/?api=1&query=%%MAPA_QUERY%%" target="_blank" rel="noopener">
+            <svg class="ic"><use href="#i-pin"/></svg><span>Ver mapa de %%DIRECCION%%</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <a class="brand brand--foot" href="#top"><img src="img/logo.jpg" alt="" width="48" height="48" loading="lazy"><span class="brand__name">gorbea<em>sushi</em></span></a>
+      <p class="foot__tag">⛩️ Fusión &amp; tradición en cada bocado · %%DIRECCION%%, %%BARRIO%%, %%CIUDAD%%</p>
+      <nav class="foot__links" aria-label="Enlaces">
+        <a href="#carta">Carta</a>
+        <a href="%%WA_HOLA%%" target="_blank" rel="noopener">WhatsApp</a>
+        <!-- SI:INSTAGRAM --><a href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener">Instagram</a><!-- /SI:INSTAGRAM -->
+      </nav>
+      <p class="foot__small">Precios en pesos chilenos. El total y el tiempo de entrega se confirman por WhatsApp.</p>
+    </div>
+  </footer>
+
+  <!-- Botones flotantes -->
+  <button class="fab" type="button" data-open-bag hidden>
+    <svg class="ic"><use href="#i-ticket"/></svg><span id="fabLabel">Ver mi comanda</span>
+  </button>
+  <a class="wa-float" href="%%WA_HOLA%%" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
+
+  <!-- ================= FICHA DE PRODUCTO ================= -->
+  <div class="modal pm" id="productModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pmName">
+    <div class="modal__bg" data-close></div>
+    <div class="pm__card">
+      <button class="modal__close" type="button" data-close aria-label="Cerrar"><svg class="ic"><use href="#i-close"/></svg></button>
+      <div class="pm__gallery">
+        <div class="pm__frame"><img id="pmImg" src="img/logo.jpg" alt=""></div>
+        <div class="pm__thumbs" id="pmThumbs"></div>
+      </div>
+      <div class="pm__info">
+        <p class="pm__cat" id="pmCat"></p>
+        <h2 class="pm__name" id="pmName"></h2>
+        <p class="pm__pcs" id="pmPcs"></p>
+        <p class="pm__price" id="pmPrice"></p>
+        <ul class="pm__list" id="pmList"></ul>
+        <p class="pm__desc" id="pmDesc"></p>
+        <fieldset class="pm__vars" id="pmVarsWrap" hidden>
+          <legend id="pmVarsTitle">Elige</legend>
+          <div class="chips" id="pmVars" role="radiogroup"></div>
+        </fieldset>
+        <div class="pm__buy">
+          <div class="qty qty--lg" aria-label="Cantidad">
+            <button type="button" data-qty="-1" aria-label="Menos">−</button>
+            <span id="pmQty">1</span>
+            <button type="button" data-qty="1" aria-label="Más">+</button>
+          </div>
+          <button class="btn btn--sea btn--lg pm__add" id="pmAdd" type="button">Agregar a la comanda</button>
+        </div>
+        <p class="pm__error" id="pmError" role="alert" hidden></p>
+        <a class="pm__ask" id="pmAsk" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> Preguntar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= COMANDA (BOLSA + PEDIDO) ================= -->
+  <div class="modal bag" id="bag" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bagTitle">
+    <div class="modal__bg" data-close-bag></div>
+    <aside class="bag__paper">
+      <header class="bag__head">
+        <div>
+          <p class="bag__no" id="bagCode">Comanda Nº GS-0000</p>
+          <h2 id="bagTitle">Tu comanda</h2>
+        </div>
+        <button class="modal__close" type="button" data-close-bag aria-label="Cerrar"><svg class="ic"><use href="#i-close"/></svg></button>
+      </header>
+
+      <div class="bag__body">
+        <ul class="bag__list" id="bagList"></ul>
+        <div class="bag__empty" id="bagEmpty">
+          <p><strong>La comanda está en blanco.</strong></p>
+          <p>Elige tus promos en la carta o escribe un pedido libre.</p>
+          <button class="btn btn--sea btn--sm" type="button" data-close-bag data-go-carta>Ver la carta</button>
+        </div>
+
+        <details class="encargo" id="encargoBox">
+          <summary>✍️ ¿Algo que no está en la web? Pedido libre</summary>
+          <textarea id="fEncargo" rows="2" maxlength="300" placeholder="Ej: Sashimi de salmón, 1 Crab balls" form="orderForm"></textarea>
+        </details>
+
+        <form class="order" id="orderForm" novalidate>
+          <fieldset class="order__extras" id="extrasBox">
+            <legend>Para acompañar</legend>
+            <div class="palillos">
+              <span>🥢 Palillos</span>
+              <div class="qty">
+                <button type="button" data-palillos="-1" aria-label="Menos palillos">−</button>
+                <span id="fPalillos">2</span>
+                <button type="button" data-palillos="1" aria-label="Más palillos">+</button>
+              </div>
+            </div>
+            <div class="chips chips--check" id="fSalsas"></div>
+            <small class="hint">Las salsas extra se confirman y cobran por WhatsApp.</small>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="order__n">1</span> Tus datos</legend>
+            <label class="field"><span>Nombre</span><input id="fNombre" type="text" autocomplete="given-name" maxlength="60" placeholder="¿A nombre de quién?"></label>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="order__n">2</span> Entrega</legend>
+            <div class="seg">
+              <label><input type="radio" name="entrega" value="delivery" checked><span><svg class="ic"><use href="#i-moto"/></svg> Delivery</span></label>
+              <label><input type="radio" name="entrega" value="retiro"><span><svg class="ic"><use href="#i-store"/></svg> Retiro en local</span></label>
+            </div>
+            <div data-delivery>
+              <label class="field"><span>Comuna</span><select id="fComuna"><option value="">Elige tu comuna</option></select></label>
+              <label class="field"><span>Dirección</span><input id="fDireccion" type="text" autocomplete="street-address" maxlength="120" placeholder="Calle y número"></label>
+              <label class="field"><span>Depto / referencia <em>(opcional)</em></span><input id="fRef" type="text" maxlength="80" placeholder="Ej: Depto 1204, citófono 12"></label>
+            </div>
+            <div data-retiro hidden>
+              <p class="hint"><svg class="ic"><use href="#i-pin"/></svg> Retiras en %%DIRECCION%%, %%BARRIO%%.</p>
+              <label class="field"><span>¿A qué hora pasas?</span><select id="fHora"></select></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="order__n">3</span> Pago</legend>
+            <div class="seg seg--3" id="fPago"></div>
+            <small class="hint" id="pagoHint"></small>
+            <div class="propina" id="propinaBox">
+              <span>🙏 Propina para el equipo</span>
+              <div class="seg seg--mini">
+                <label><input type="radio" name="propina" value="0" checked><span>Sin</span></label>
+                <label><input type="radio" name="propina" value="5"><span>5%</span></label>
+                <label><input type="radio" name="propina" value="10"><span>10%</span></label>
+              </div>
+            </div>
+            <label class="field"><span>Nota para la cocina <em>(opcional)</em></span><textarea id="fNota" rows="2" maxlength="200" placeholder="Ej: sin cebollín, la salsa aparte"></textarea></label>
+          </fieldset>
+
+          <div class="coupon" id="couponBox" hidden>
+            <div class="coupon__form" id="cuponForm">
+              <input id="fCupon" type="text" maxlength="20" placeholder="¿Tienes un código?" autocomplete="off" aria-label="Código de descuento">
+              <button class="btn btn--line btn--sm" id="cuponBtn" type="button">Aplicar</button>
+            </div>
+            <div class="coupon__status" id="cuponStatus" hidden></div>
+          </div>
+
+          <div class="sums">
+            <div class="sums__rows" id="bagSums"></div>
+            <p class="sums__total"><span id="bagTotalLabel">Total</span><strong id="bagTotal">—</strong></p>
+            <p class="hint" id="bagHint"></p>
+          </div>
+
+          <details class="preview">
+            <summary>Ver el mensaje que se enviará</summary>
+            <div class="preview__bubble" id="msgPreview"></div>
+          </details>
+
+          <p class="order__error" id="formError" role="alert" hidden></p>
+          <button class="btn btn--wa btn--lg btn--block" type="submit"><svg class="ic"><use href="#i-wa"/></svg> Enviar comanda por WhatsApp</button>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= PROMO EN VENTANA EMERGENTE ================= -->
+  <!-- SI:FLYER_POPUP -->
+  <div class="modal promo-pop" id="promoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="%%FLYER_TITULO%%" data-flyer="%%FLYER_POPUP%%">
+    <div class="modal__bg" data-promo-close></div>
+    <div class="promo-pop__card">
+      <button class="modal__close" type="button" data-promo-close aria-label="Cerrar"><svg class="ic"><use href="#i-close"/></svg></button>
+      <img src="%%FLYER_POPUP%%" alt="%%FLYER_ALT%%" loading="lazy">
+      <div class="promo-pop__row">
+        <!-- SI:FLYER_PRODUCTO --><button class="btn btn--sea" type="button" data-add="%%FLYER_PRODUCTO%%" data-promo-close>Agregar %%FLYER_PRECIO%%</button><!-- /SI:FLYER_PRODUCTO -->
+        <button class="btn btn--line" type="button" data-promo-close>Ver la carta</button>
+      </div>
+    </div>
+  </div>
+  <!-- /SI:FLYER_POPUP -->
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

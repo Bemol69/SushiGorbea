@@ -1,0 +1,20 @@
+{
+  "nombre": "Promo Hot 4",
+  "piezas": "32 piezas",
+  "precio": 18990,
+  "foto": "img/productos/carta-hot-4.jpg",
+  "fotos": [
+    "img/productos/hot-4-flyer.jpg"
+  ],
+  "descripcion": "",
+  "incluye": [
+    "Pollo teriyaki, queso crema (caliente)",
+    "Salmón, queso crema, cebollín (caliente)",
+    "Camarón, queso crema, cebollín (palta)",
+    "Camarón apanado, palta (Ceviche roll)"
+  ],
+  "etiqueta": "Para compartir",
+  "orden": 40,
+  "agotado": false,
+  "visible": true
+}

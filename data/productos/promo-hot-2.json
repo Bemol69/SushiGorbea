@@ -1,0 +1,19 @@
+{
+  "nombre": "Promo Hot 2",
+  "piezas": "24 piezas",
+  "precio": 13990,
+  "foto": "img/productos/hot-2.jpg",
+  "fotos": [
+    "img/productos/hot-2b.jpg"
+  ],
+  "descripcion": "",
+  "incluye": [
+    "Ceviche de salmón, palta, envuelto en arroz (Acevichado wow)",
+    "Pollo teriyaki, queso crema (caliente)",
+    "Camarón, queso crema, cebollín (caliente)"
+  ],
+  "etiqueta": "Acevichado wow",
+  "orden": 20,
+  "agotado": false,
+  "visible": true
+}

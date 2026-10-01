@@ -1,0 +1,26 @@
+{
+  "nombre": "Korokke",
+  "piezas": "4 unidades",
+  "precio": 2990,
+  "foto": "img/productos/carta-korokke.jpg",
+  "fotos": [],
+  "descripcion": "Bolitas fritas rellenas de queso crema.",
+  "incluye": [],
+  "etiqueta": "",
+  "orden": 150,
+  "agotado": false,
+  "visible": true,
+  "variantes": {
+    "titulo": "Tipo",
+    "opciones": [
+      {
+        "nombre": "Clásico · queso crema",
+        "precio": 2990
+      },
+      {
+        "nombre": "Teri Cheese · queso crema y pollo teriyaki",
+        "precio": 3990
+      }
+    ]
+  }
+}

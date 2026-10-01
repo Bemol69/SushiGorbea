@@ -1,0 +1,19 @@
+{
+  "nombre": "30 Piezas Mix",
+  "piezas": "30 piezas",
+  "precio": 8000,
+  "foto": "img/productos/mix-30.jpg",
+  "fotos": [
+    "img/productos/mix-30b.jpg"
+  ],
+  "descripcion": "",
+  "incluye": [
+    "Pollo teriyaki, queso crema (caliente)",
+    "Kanikama, queso crema (caliente)",
+    "Palta, palmito (ciboulette)"
+  ],
+  "etiqueta": "Sushi para dos",
+  "orden": 70,
+  "agotado": false,
+  "visible": true
+}

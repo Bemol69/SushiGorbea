@@ -1,0 +1,36 @@
+{
+  "nombre": "Gyozas",
+  "piezas": "5 unidades",
+  "precio": 3390,
+  "foto": "img/productos/gyozas.jpg",
+  "fotos": [
+    "img/productos/carta-picar.jpg"
+  ],
+  "descripcion": "5 deliciosas empanadillas, a la plancha.",
+  "incluye": [],
+  "etiqueta": "",
+  "orden": 140,
+  "agotado": false,
+  "visible": true,
+  "variantes": {
+    "titulo": "Relleno",
+    "opciones": [
+      {
+        "nombre": "Pollo",
+        "precio": 3390
+      },
+      {
+        "nombre": "Cerdo",
+        "precio": 3390
+      },
+      {
+        "nombre": "Camarón",
+        "precio": 3490
+      },
+      {
+        "nombre": "Verduras",
+        "precio": 3490
+      }
+    ]
+  }
+}

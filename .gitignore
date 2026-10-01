@@ -1,0 +1,10 @@
+# Generados por scripts/build.mjs
+dist/
+data/catalogo.json
+.vercel
+
+# Material original del cliente (capturas, fotos pesadas): no se sube al repo
+material-cliente/
+
+# Dependencias (Vercel las instala en cada build)
+node_modules/

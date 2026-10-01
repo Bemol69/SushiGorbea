@@ -1,0 +1,17 @@
+{
+  "nombre": "Gorbea 30 Vegetarianas",
+  "piezas": "30 piezas",
+  "precio": 10500,
+  "foto": "img/productos/veg-30.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Champiñón, queso crema, pimentón (caliente)",
+    "Aceituna, queso crema, pimentón (caliente)",
+    "Palmito, queso crema, cebollín (palta)"
+  ],
+  "etiqueta": "Veggie",
+  "orden": 100,
+  "agotado": false,
+  "visible": true
+}

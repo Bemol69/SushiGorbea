@@ -1,0 +1,9 @@
+{
+  "nombre": "Para picar",
+  "productos": [
+    "gyozas",
+    "korokke"
+  ],
+  "orden": 40,
+  "visible": true
+}

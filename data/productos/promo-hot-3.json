@@ -1,0 +1,19 @@
+{
+  "nombre": "Promo Hot 3",
+  "piezas": "20 piezas",
+  "precio": 9990,
+  "foto": "img/productos/hot-3.jpg",
+  "fotos": [
+    "img/productos/carta-hot-3.jpg"
+  ],
+  "descripcion": "",
+  "incluye": [
+    "Pollo teriyaki, queso crema (caliente)",
+    "Camarón, queso crema, cebollín (caliente)",
+    "Gyozas de cerdo (4 unid)"
+  ],
+  "etiqueta": "Con gyozas",
+  "orden": 30,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,21 @@
+{
+  "nombre": "Promo 4",
+  "piezas": "53 piezas",
+  "precio": 25990,
+  "foto": "img/productos/carta-promo-4.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Queso crema, pollo teriyaki (caliente)",
+    "Queso crema, salmón, palta (salmón)",
+    "Palta, camarón (sésamo)",
+    "Palta, pollo teriyaki (ciboulette)",
+    "Palta, kanikama (hosomaki)",
+    "Gyoza de cerdo (5 unidades)",
+    "Queso crema, camarón apanado, palta (ceviche de salmón y salsa acevichada)"
+  ],
+  "etiqueta": "Para el grupo",
+  "orden": 130,
+  "agotado": false,
+  "visible": true
+}

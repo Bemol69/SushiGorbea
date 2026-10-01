@@ -1,0 +1,17 @@
+{
+  "nombre": "Gorbea 30 Veganos",
+  "piezas": "30 piezas",
+  "precio": 12990,
+  "foto": "img/productos/vegan-30.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Champiñón apanado, lechuga (palta)",
+    "Palta, palmito, pimentón (sésamo)",
+    "Seitan, palta, cebollín (caliente)"
+  ],
+  "etiqueta": "100% vegano",
+  "orden": 110,
+  "agotado": false,
+  "visible": true
+}

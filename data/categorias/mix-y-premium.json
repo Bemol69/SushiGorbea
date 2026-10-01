@@ -1,0 +1,13 @@
+{
+  "nombre": "Mix y Premium",
+  "productos": [
+    "20-piezas-mix",
+    "30-piezas-mix",
+    "40-piezas-mix",
+    "70-piezas-premium",
+    "promo-1",
+    "promo-4"
+  ],
+  "orden": 20,
+  "visible": true
+}

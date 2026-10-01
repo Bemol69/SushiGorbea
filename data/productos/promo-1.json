@@ -1,0 +1,17 @@
+{
+  "nombre": "Promo 1",
+  "piezas": "18 piezas",
+  "precio": 8990,
+  "foto": "img/productos/carta-promo-1.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Queso crema, camarón, cebollín (caliente)",
+    "Queso crema, salmón (hosomaki)",
+    "Niguiri de salmón (2 unid)"
+  ],
+  "etiqueta": "Con niguiri",
+  "orden": 120,
+  "agotado": false,
+  "visible": true
+}

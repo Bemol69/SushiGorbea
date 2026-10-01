@@ -1,0 +1,19 @@
+{
+  "nombre": "Promo Hot 1",
+  "piezas": "24 piezas",
+  "precio": 13990,
+  "foto": "img/productos/hot-1.jpg",
+  "fotos": [
+    "img/productos/carta-hot-1.jpg"
+  ],
+  "descripcion": "",
+  "incluye": [
+    "Camarón apanado, palta (Ceviche rolls)",
+    "Pollo teriyaki, queso crema (caliente)",
+    "Camarón, queso crema, cebollín (caliente)"
+  ],
+  "etiqueta": "Ceviche rolls",
+  "orden": 10,
+  "agotado": false,
+  "visible": true
+}

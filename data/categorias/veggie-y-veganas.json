@@ -1,0 +1,9 @@
+{
+  "nombre": "Veggie y Veganas",
+  "productos": [
+    "gorbea-30-vegetarianas",
+    "gorbea-30-veganos"
+  ],
+  "orden": 30,
+  "visible": true
+}

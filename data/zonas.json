@@ -1,0 +1,42 @@
+{
+  "_ayuda": "Comunas donde llega el delivery. Costo 0 o vacío = se confirma por WhatsApp.",
+  "zonas": [
+    {
+      "comuna": "Santiago Centro",
+      "costo": 0
+    },
+    {
+      "comuna": "Estación Central",
+      "costo": 0
+    },
+    {
+      "comuna": "Independencia",
+      "costo": 0
+    },
+    {
+      "comuna": "Recoleta",
+      "costo": 0
+    },
+    {
+      "comuna": "Quinta Normal",
+      "costo": 0
+    },
+    {
+      "comuna": "Providencia",
+      "costo": 0
+    },
+    {
+      "comuna": "Ñuñoa",
+      "costo": 0
+    },
+    {
+      "comuna": "San Miguel",
+      "costo": 0
+    },
+    {
+      "comuna": "Pedro Aguirre Cerda",
+      "costo": 0
+    }
+  ],
+  "otra_comuna": true
+}

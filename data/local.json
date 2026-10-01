@@ -1,0 +1,22 @@
+{
+  "fotos": [
+    {
+      "archivo": "img/local/barra.jpg",
+      "titulo": "La barra",
+      "texto": "Gorbea 2081, Barrio República",
+      "descripcion": "Barra de resina naranja y pisos altos en el local de Gorbea Sushi"
+    },
+    {
+      "archivo": "img/local/sushipleto.jpg",
+      "titulo": "Sushipleto",
+      "texto": "El completo chileno, versión sushi",
+      "descripcion": "Sushi completo estilo chileno con palta y tomate"
+    },
+    {
+      "archivo": "img/local/gohan.jpg",
+      "titulo": "Gohan especial",
+      "texto": "Salmón, camarón, palta y papas hilo",
+      "descripcion": "Bowl gohan especial con lechuga, salmón, camarón y palta"
+    }
+  ]
+}

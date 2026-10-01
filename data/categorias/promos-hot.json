@@ -1,0 +1,12 @@
+{
+  "nombre": "Promos Hot",
+  "productos": [
+    "promo-hot-1",
+    "promo-hot-2",
+    "promo-hot-3",
+    "promo-hot-4",
+    "promo-hot-5"
+  ],
+  "orden": 10,
+  "visible": true
+}

@@ -1,0 +1,40 @@
+{
+  "_ayuda": "Datos fijos de la tienda (los define el desarrollador). Contacto, horario, portada y zonas de delivery van en data/, que el cliente edita desde /admin.",
+  "nombre": "Gorbea Sushi",
+  "rubro": "Sushi bar con delivery y retiro",
+  "schema_tipo": "Restaurant",
+  "cocina": "Sushi, Japonesa, Nikkei",
+  "seo_titulo": "Gorbea Sushi · Sushi en Barrio República, Santiago Centro | Delivery y retiro",
+  "seo_descripcion": "Promos de sushi en Barrio República: rolls calientes, acevichados, mix de 20 a 70 piezas y opciones veganas. Arma tu pedido y envíalo por WhatsApp. Gorbea 2081, Santiago.",
+  "github_repo": "Bemol69/SushiGorbea",
+  "site_url": "https://sushigorbea.vercel.app",
+  "google_verificacion": "",
+  "hero": {
+    "principal": {
+      "foto": "img/hero/acevichado.jpg",
+      "alt": "Roll acevichado de Gorbea Sushi con ceviche de salmón y cebolla morada"
+    },
+    "secundaria": {
+      "foto": "img/hero/hot.jpg",
+      "alt": "Rolls calientes apanados de la Promo Hot 1"
+    },
+    "producto": "promo-hot-2"
+  },
+  "fuentes": {
+    "display": "Dela Gothic One",
+    "texto": "Zen Kaku Gothic New",
+    "mono": "Space Mono"
+  },
+  "colores": {
+    "noche": "#0A1A33",
+    "noche_2": "#11284D",
+    "mar": "#1DA9D3",
+    "mar_oscuro": "#0D6F99",
+    "papel": "#F7F1E5",
+    "tinta": "#16233F",
+    "salmon": "#FF8A5B",
+    "hot": "#FF5A36",
+    "arroz": "#FFFFFF",
+    "niebla": "#A7B8D4"
+  }
+}

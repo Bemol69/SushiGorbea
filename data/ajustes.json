@@ -1,0 +1,30 @@
+{
+  "whatsapp": "56973177547",
+  "instagram": "gorbea.sushi",
+  "facebook": "",
+  "direccion": "Gorbea 2081",
+  "barrio": "Barrio República",
+  "ciudad": "Santiago",
+  "region": "Región Metropolitana",
+  "seguidores": "1.976",
+  "horario_dias": "Lunes a domingo",
+  "hora_abre": "12:00",
+  "hora_cierra": "23:00",
+  "hora_cierra_finde": "23:30",
+  "hero_titulo": "Sushi de barrio,",
+  "hero_destacado": "fusión de verdad.",
+  "hero_bajada": "Rolls calientes, acevichados y promos para compartir hechas en Gorbea 2081. Arma tu comanda, elige delivery o retiro y te confirmamos altiro por WhatsApp.",
+  "salsas": [
+    "Soya",
+    "Agridulce",
+    "Teriyaki",
+    "Acevichada",
+    "Jengibre y wasabi"
+  ],
+  "metodos_pago": {
+    "efectivo": true,
+    "transferencia": true,
+    "tarjeta_retiro": true
+  },
+  "propina": true
+}

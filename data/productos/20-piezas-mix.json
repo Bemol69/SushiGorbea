@@ -1,0 +1,27 @@
+{
+  "nombre": "20 Piezas Mix",
+  "piezas": "20 piezas",
+  "precio": 6500,
+  "foto": "img/productos/mix-20.jpg",
+  "fotos": [],
+  "descripcion": "",
+  "incluye": [
+    "Pollo teriyaki, queso crema (caliente)",
+    "Kanikama, queso crema (caliente o frío)"
+  ],
+  "etiqueta": "Para uno",
+  "orden": 60,
+  "agotado": false,
+  "visible": true,
+  "variantes": {
+    "titulo": "Kanikama, queso crema",
+    "opciones": [
+      {
+        "nombre": "Caliente"
+      },
+      {
+        "nombre": "Frío"
+      }
+    ]
+  }
+}
